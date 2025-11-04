@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>تعلم البرمجة — JavaScript للمتدين</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>تعلم البرمجة بـ JavaScript — عملي وتفاعلي</h1>
+    <p class="lead">دروس قصيرة بالعربي، بعد كل درس سؤال، وبعدها محرر تكتب فيه الكود ويتحقق لك إذا صحيح أو لا.</p>
+  </header>
+
+  <main id="main">
+    <nav class="levels">
+      <button class="level active" data-tab="lesson1">المقدمة</button>
+      <button class="level" data-tab="lesson2">المتغيرات</button>
+      <button class="level" data-tab="lesson3">الشروط</button>
+      <button class="level" data-tab="lesson4">الحلقات</button>
+      <button class="level" data-tab="editor">المحرر التفاعلي</button>
+    </nav>
+
+    <section id="lesson1" class="card active">
+      <h2>المقدمة — ما هي البرمجة؟</h2>
+      <p>البرمجة هي إعطاء أوامر للكمبيوتر ليؤدي مهام. نكتب أوامر (كود) بلغة يفهمها المتصفح مثل JavaScript.</p>
+      <p class="exercise"><strong>سؤال:</strong> صح أم خطأ: JavaScript تعمل فقط على الخادم (Server).</p>
+      <div class="qbuttons">
+        <button class="check-btn" data-answer="false">صح</button>
+        <button class="check-btn" data-answer="true">خطأ</button>
+      </div>
+      <div class="feedback"></div>
+    </section>
+
+    <section id="lesson2" class="card">
+      <h2>المتغيرات (Variables)</h2>
+      <p>المتغير يخزن قيمة. مثال:</p>
+      <pre><code>let name = "Mohammed";
+console.log(name);</code></pre>
+      <p class="exercise"><strong>سؤال:</strong> أي سطر يُنشيء متغيراً؟</p>
+      <div class="qbuttons">
+        <button class="check-btn" data-answer="true">let x = 5;</button>
+        <button class="check-btn" data-answer="false">console.log(x);</button>
+      </div>
+      <div class="feedback"></div>
+    </section>
+
+    <section id="lesson3" class="card">
+      <h2>الشروط (if)</h2>
+      <p>نستخدم الشروط لتنفيذ كود إذا تحقق شرط معين.</p>
+      <pre><code>let x = 10;
+if (x &gt; 5) { console.log('big'); }</code></pre>
+      <p class="exercise"><strong>سؤال:</strong> لو x = 3، هل سيطبع 'big'؟</p>
+      <div class="qbuttons">
+        <button class="check-btn" data-answer="false">نعم</button>
+        <button class="check-btn" data-answer="true">لا</button>
+      </div>
+      <div class="feedback"></div>
+    </section>
+
+    <section id="lesson4" class="card">
+      <h2>الحلقات (Loops)</h2>
+      <p>تستخدم الحلقات لتكرار تنفيذ كتلة كود.</p>
+      <pre><code>for (let i = 0; i &lt; 3; i++) { console.log(i); }</code></pre>
+      <p class="exercise"><strong>سؤال:</strong> كم مرة سينفذ الكود في المثال أعلاه؟</p>
+      <div class="qbuttons">
+        <button class="check-btn" data-answer="false">2</button>
+        <button class="check-btn" data-answer="true">3</button>
+      </div>
+      <div class="feedback"></div>
+    </section>
+
+    <section id="editor" class="card">
+      <h2>المحرر التفاعلي — اكتب الكود وتأكد منه</h2>
+      <p>في هذا المحرر نطلب منك كتابة كود يطبع نتيجة معينة. بعد كتابة الكود اضغط <strong>Run</strong>. الزر الأخضر هو زر التشغيل.</p>
+
+      <div class="task" id="taskBox">
+        <strong>المهمة 1:</strong> اكتب كودًا يطبع `"Hello, World!"` باستخدام <code>console.log</code>.
+        <div class="instructions">المطلوب: الناتج يجب أن يكون نص حرفي بالضبط <code>Hello, World!</code></div>
+      </div>
+
+      <textarea id="code" spellcheck="false">// اكتب كودك هنا
+// مثال: console.log('Hello, World!');
+</textarea>
+      <div class="editor-controls">
+        <button id="runBtn" class="btn green">Run</button>
+        <button id="resetBtn" class="btn">Reset</button>
+        <select id="taskSelect">
+          <option value="1">مهمة 1 — Hello, World!</option>
+          <option value="2">مهمة 2 — جمع رقمين</option>
+          <option value="3">مهمة 3 — شرط بسيط</option>
+        </select>
+      </div>
+      <div class="output">
+        <div class="out-header">Output</div>
+        <pre id="outputArea"></pre>
+      </div>
+      <div class="editor-feedback"></div>
+    </section>
+
+  </main>
+
+  <footer>تم الإنشاء — موقع تعليمي بسيط تفاعلي | يعمل محلياً ومباشرة على المتصفح</footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
